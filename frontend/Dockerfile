@@ -16,7 +16,7 @@ USER root
 RUN apk update && apk upgrade --no-cache && rm -rf /var/cache/apk/*
 
 # Configuration Nginx et fichiers statiques
-COPY nginx/prod.conf /etc/nginx/conf.d/default.conf
+# COPY ../nginx/prod.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 8080

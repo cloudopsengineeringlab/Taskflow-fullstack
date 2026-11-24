@@ -45,7 +45,7 @@ RUN mkdir -p storage/app storage/framework/cache/data storage/framework/sessions
  && chown -R www-data:www-data storage bootstrap/cache \
  && chmod -R u+rwX,g-w,o-rwx storage bootstrap/cache
 
-COPY --chmod=0755 docker/entrypoint-prod.sh /usr/local/bin/entrypoint
+COPY --chmod=0755 docker-entrypoint.sh /usr/local/bin/entrypoint
 ENV APP_ENV=production APP_DEBUG=false \
     MYSQL_ATTR_SSL_CA=/etc/ssl/certs/rds-global-bundle.pem
 

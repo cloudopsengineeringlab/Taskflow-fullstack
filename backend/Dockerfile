@@ -33,7 +33,6 @@ RUN apk add --no-cache oniguruma \
  && rm -rf /tmp/* /var/cache/apk/* \
  && apk upgrade --no-cache
 
-COPY docker/php-prod.ini "$PHP_INI_DIR/conf.d/zz-taskflow.ini"
 COPY --from=certs /rds-global-bundle.pem /etc/ssl/certs/rds-global-bundle.pem
 
 WORKDIR /var/www/html

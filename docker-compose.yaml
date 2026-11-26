@@ -10,7 +10,7 @@ services:
   
     networks:
       - app-network
-
+ 
   frontend-container:
     container_name: my-frontend
     build:
